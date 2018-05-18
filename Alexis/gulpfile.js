@@ -90,7 +90,7 @@ gulp.task('fonts', function() {
 
 gulp.task('watch', function() {
   gulp.watch('./src/**/*.html', ['html']);
-  gulp.watch('./src/sass/**/*.scss', ['sass', 'css']);
+  gulp.watch('./src/sass/**/*.scss', ['sass']);
   gulp.watch('./src/css/main.css', ['css']);
   gulp.watch('./src/img/**/*.*', ['image']);
   gulp.watch('./src/js/**/*.js', ['js']);
@@ -98,7 +98,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', ['html', 'sass', 'css', 'fonts', 'image' ]);
-gulp.task('default', ['webserver', 'watch']);
+gulp.task('default', ['build', 'webserver', 'watch']);
 
 /* Task Clean (delete folder [build/]) */
 gulp.task('clean', function () {
