@@ -1,3 +1,5 @@
+/*----------BASE---------*/
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
 @font-face {
   font-family: 'Poppins-Regular';
   src: url("../../fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/Poppins-Regular.otf") format("opentype"), url("../../fonts/Poppins-Regular.woff") format("woff"), url("../../fonts/Poppins-Regular.ttf") format("truetype"), url("../../fonts/Poppins-Regular.svg#Poppins-Regular") format("svg");
@@ -55,6 +57,20 @@ button {
 img {
   max-width: 100%; }
 
+a {
+  text-decoration: none; }
+
+/*----------THEME---------*/
+.btn {
+  padding: 18px 40px;
+  border-radius: 30px;
+  font-size: 16px;
+  text-transform: uppercase; }
+  .btn__orange {
+    background: #fc5f45;
+    color: #fff; }
+
+/*----------LAYOUT---------*/
 .header {
   padding: 20px;
   background: #3f4049; }
@@ -69,10 +85,42 @@ img {
     width: 50px;
     height: 30px;
     background: red; }
-  .header__nav a {
-    display: block;
-    font-size: 14px;
-    color: #fff; }
+  .header__nav {
+    display: flex;
+    align-items: center; }
+    .header__nav a {
+      display: block;
+      font-size: 14px;
+      color: #fff;
+      margin-left: 22px; }
+
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 800px;
+  background: url("../../img/slider-background.jpg") no-repeat;
+  background-size: cover; }
+  .banner:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.3; }
+  .banner__wrapper {
+    position: relative;
+    z-index: 1; }
+  .banner__title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    line-height: 80px; }
 
 p {
   color: red; }

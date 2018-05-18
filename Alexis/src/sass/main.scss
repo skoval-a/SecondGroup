@@ -1,5 +1,11 @@
+/*----------BASE---------*/
 @import './base/_base.scss';
 @import 'theme/_colors.scss';
 
+/*----------THEME---------*/
+@import './theme/_buttons.scss';
+
+/*----------LAYOUT---------*/
 @import './layout/_header.scss';
+@import './modules/_banner.scss';
 @import '_footer.scss';

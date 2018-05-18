@@ -1,0 +1,31 @@
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 800px;
+  background: url('../../img/slider-background.jpg') no-repeat;
+  background-size: cover;
+  &:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.3;
+  }
+  &__wrapper {
+    position: relative;
+    z-index: 1;
+  }
+  &__title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    line-height: 80px;
+  }
+}

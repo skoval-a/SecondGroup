@@ -1,0 +1,10 @@
+.btn {
+  padding: 18px 40px;
+  border-radius: 30px;
+  font-size: 16px;
+  text-transform: uppercase;
+  &__orange {
+    background: $orange;
+    color: #fff;
+  }
+}

@@ -16,10 +16,13 @@
     background: red;
   }
   &__nav {
+    display: flex;
+    align-items: center;
     a {
       display: block;
       font-size: 14px;
       color: #fff;
+      margin-left: 22px;
     }
   }
 }
