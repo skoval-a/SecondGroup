@@ -27,7 +27,7 @@ const reload = browserSync.reload;
 /*Task for webserver*/
 const config = {
   server: {
-      baseDir: "./build"
+      baseDir: "./src"
   },
   tunnel: false,
   host: 'localhost',
@@ -42,15 +42,15 @@ gulp.task('webserver', function () {
 gulp.task('html', function() {
   return gulp.src('./src/index.html')
   //.pipe(rigger())
-  .pipe(gulp.dest('./build'))
+  .pipe(gulp.dest('./src'))
   .pipe(reload({stream: true}));
 });
 
 gulp.task('css', function() {
-  return gulp.src('./build/css/main.css')
+  return gulp.src('./src/css/main.css')
   .pipe(gulpminifycss())
   .pipe(rename('main.min.css'))
-  .pipe(gulp.dest('./build/css'))
+  .pipe(gulp.dest('./src/css'))
 });
 
 gulp.task('sass', function() {
@@ -62,42 +62,42 @@ gulp.task('sass', function() {
   }))
   .pipe(remember('sass'))
   .pipe(sass())
-  .pipe(gulp.dest('./build/css/'))
+  .pipe(gulp.dest('./src/css/'))
   .pipe(reload({stream: true}));
 });
 
 /* Task for folder Images */
 gulp.task('image', function () {
   gulp.src('./src/img/**/*.*')
-      .pipe(newer('./build/img/'))
+      .pipe(newer('./src/img/'))
       .pipe(imagemin({
           progressive: true,
           svgoPlugins: [{removeViewBox: false}],
           use: [pngquant()],
           interlaced: true
       }))
-      .pipe(gulp.dest('./build/img/'))
+      .pipe(gulp.dest('./src/img/'))
       .pipe(reload({stream: true}));
 });
 
 /* Task for folder Fonts */
 gulp.task('fonts', function() {
   gulp.src('./src/fonts/**/*.*')
-    .pipe(newer('./build/fonts/'))
-    .pipe(gulp.dest('./build/fonts/'))
+    .pipe(newer('./src/fonts/'))
+    .pipe(gulp.dest('./src/fonts/'))
 });
 
 gulp.task('watch', function() {
   gulp.watch('./src/**/*.html', ['html']);
-  gulp.watch('./src/sass/**/*.scss', ['sass']);
-  gulp.watch('./build/css/main.css', ['css']);
+  gulp.watch('./src/sass/**/*.scss', ['sass', 'css']);
+  gulp.watch('./src/css/main.css', ['css']);
   gulp.watch('./src/img/**/*.*', ['image']);
   gulp.watch('./src/js/**/*.js', ['js']);
   gulp.watch('./src/vendor/**/*.*', ['vendor']);
 });
 
 gulp.task('build', ['html', 'sass', 'css', 'fonts', 'image' ]);
-gulp.task('default', ['build', 'webserver', 'watch']);
+gulp.task('default', ['webserver', 'watch']);
 
 /* Task Clean (delete folder [build/]) */
 gulp.task('clean', function () {
