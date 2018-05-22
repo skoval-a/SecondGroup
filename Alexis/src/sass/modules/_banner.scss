@@ -1,31 +1,102 @@
-.banner {
+.firstSection {
   position: relative;
+  min-height: 700px;
+  padding: 40px 15px;
+  background: url('../img/slider-background.jpg') no-repeat center center;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  min-height: 800px;
-  background: url('../../img/slider-background.jpg') no-repeat;
-  background-size: cover;
   &:after {
     position: absolute;
-    content: '';
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background: black;
-    opacity: 0.3;
+    content: '';
+    background: rgba(18, 38, 76, 0.4);
   }
-  &__wrapper {
+  .wrapper {
+    max-width: 830px;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
   }
-  &__title {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 60px;
-    color: #fff;
+  &__wrapBtn {
     text-align: center;
-    line-height: 80px;
+    margin-bottom: 80px;
+  }
+  &__title {
+    font-size: 60px;
+    color: $white;
+    text-align: center;
+    margin-bottom: 60px;
+    line-height: 85px;
+  }
+  &__boxes {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row wrap;
+  }
+  .box {
+    width: 240px;
+    flex: 1;
+    text-align: center;
+    &__img {
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      margin-bottom: 45px;
+      img {
+        object-fit: contain;
+      }
+    }
+    &__text {
+      font-size: 18px;
+      text-transform: uppercase;
+      &.green {
+        color: $green;
+      }
+      &.purpure {
+        color: $purpure;
+      }
+      &.yellow {
+        color: $yellow;
+      }
+    }
+  }
+  @include media(768px) {
+    min-height: initial;
+    &__title {
+      font-size: 47px;
+      margin-bottom: 50px;
+      line-height: 59px;
+    }
+    &__wrapBtn {
+      margin-bottom: 50px;
+    }
+  }
+  @include media(480px) {
+    &__title {
+      font-size: 26px;
+      margin-bottom: 30px;
+      line-height: 39px;
+    }
+    &__boxes {
+      flex-direction: column;
+    }
+    .box {
+      margin-bottom: 25px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &__img {
+        margin-bottom: 15px;
+      }
+      &__text {
+        font-size: 16px;
+      }
+    }
   }
 }
