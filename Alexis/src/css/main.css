@@ -1,4 +1,5 @@
 /*----------BASE---------*/
+/*----COLORS-----*/
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
 @font-face {
   font-family: 'Poppins-Regular';
@@ -60,7 +61,31 @@ img {
 a {
   text-decoration: none; }
 
-/*----COLORS-----*/
+.sectionTitle {
+  font-size: 50px;
+  color: #313131;
+  text-align: center;
+  margin-bottom: 40px; }
+  @media only screen and (max-width: 768px) {
+    .sectionTitle {
+      font-size: 36px;
+      margin-bottom: 15px; } }
+  @media only screen and (max-width: 480px) {
+    .sectionTitle {
+      font-size: 26px; } }
+
+.sub-text {
+  font-size: 14px;
+  color: #616161;
+  text-align: center; }
+  @media only screen and (max-width: 768px) {
+    .sub-text {
+      line-height: 20px; } }
+
+.wrapper {
+  max-width: 1140px;
+  margin: 0 auto; }
+
 /*----------THEME---------*/
 .btn {
   padding: 18px 40px;
@@ -175,50 +200,134 @@ a {
       .firstSection .box__text {
         font-size: 16px; } }
 
-.aboutUs {
-  padding: 70px 15px; }
-  .aboutUs .container {
-    max-width: 1140px;
-    margin: auto;
+.aboutus {
+  padding: 150px 15px; }
+  .aboutus .wrapper {
     display: flex;
-    align-items: center; }
-  .aboutUs__image {
-    width: 555px;
-    height: 700px; }
-    .aboutUs__image img {
+    align-items: center;
+    max-width: 1140px;
+    margin: 0 auto; }
+  .aboutus__photo {
+    max-width: 555px;
+    max-height: 700px;
+    width: 100%;
+    height: 100%; }
+    .aboutus__photo img {
       width: 100%;
       height: 100%;
       object-fit: cover; }
-  .aboutUs__info {
+  .aboutus__body {
     position: relative;
-    width: 650px;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
-    background: #fff;
-    padding: 90px;
-    margin-left: -70px; }
-    .aboutUs__info:after {
+    height: 490px;
+    max-width: 650px;
+    padding: 30px 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -70px;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15); }
+    .aboutus__body:after {
+      width: 100%;
+      height: 3px;
       position: absolute;
-      left: 5px;
-      top: 5px;
-      font-weight: bold;
-      content: '01';
-      font-size: 270px;
-      color: #f6f6f6; }
-  .aboutUs__wrap-info {
-    position: relative;
-    z-index: 1; }
-  .aboutUs__title {
-    color: #3f4049;
-    font-family: 'Baskerville';
-    font-size: 50px;
-    margin-bottom: 45px; }
-  .aboutUs__text {
+      left: 0;
+      bottom: 0;
+      content: "";
+      background-image: linear-gradient(to left, #3a9a7c 0%, #3a9a7c 25%, #fc5f45 25%, #fc5f45 50%, #956dca 50%, #956dca 75%, #feb960 75%, #feb960 100%); }
+  .aboutus .sectionTitle {
+    margin-bottom: 55px; }
+  .aboutus__text {
     font-size: 15px;
-    color: #959595;
-    line-height: 30px;
+    color: #616161;
+    line-height: 25px;
     margin-bottom: 40px; }
-    .aboutUs__text:last-child {
-      margin-bottom: 0px; }
+    .aboutus__text:last-child {
+      margin-bottom: 0; }
+  .aboutus__wrap-title {
+    width: 100%; }
+  @media only screen and (max-width: 1024px) {
+    .aboutus__body {
+      height: auto;
+      padding: 30px 50px; }
+    .aboutus .sectionTitle {
+      margin-bottom: 30px; } }
+  @media only screen and (max-width: 1024px) {
+    .aboutus {
+      padding: 30px 15px; }
+      .aboutus .wrapper {
+        flex-direction: column;
+        max-width: 400px; }
+      .aboutus__body {
+        width: auto;
+        margin-left: 0;
+        margin-top: 25px; }
+      .aboutus__text {
+        font-size: 14px; } }
 
-p {
-  color: red; }
+.focus {
+  padding: 80px 15px;
+  background-color: #f7f7f7; }
+  .focus .wrapper {
+    max-width: 1140px;
+    margin: 0 auto; }
+  .focus__head {
+    margin-bottom: 80px; }
+  .focus__sub-text {
+    font-size: 14px;
+    color: #616161;
+    text-align: center; }
+  .focus .sectionTitle {
+    margin-bottom: 40px;
+    text-align: center; }
+  .focus__boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -15px; }
+  .focus .box {
+    width: 265px;
+    max-width: 265px;
+    flex: 1;
+    min-width: 170px;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    background-color: white;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 15px; }
+    .focus .box.red {
+      border-bottom: 3px solid #fc5f45; }
+    .focus .box.green {
+      border-bottom: 3px solid #3a9a7c; }
+    .focus .box.purpure {
+      border-bottom: 3px solid #956dca; }
+    .focus .box.yellow {
+      border-bottom: 3px solid #feb960; }
+    .focus .box__img {
+      margin-bottom: 30px; }
+    .focus .box__title {
+      margin-bottom: 30px;
+      font-size: 20px;
+      color: #313131;
+      font-weight: 500; }
+    .focus .box__text {
+      color: #616161;
+      font-size: 15px;
+      line-height: 25px; }
+  @media only screen and (max-width: 1024px) {
+    .focus__boxes {
+      margin: 0; }
+    .focus .box {
+      margin-bottom: 25px;
+      flex: auto; } }
+  @media only screen and (max-width: 768px) {
+    .focus {
+      padding: 30px 15px; } }

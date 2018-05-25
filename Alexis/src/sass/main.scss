@@ -1,13 +1,17 @@
 /*----------BASE---------*/
+@import './theme/_colors.scss';
+@import './base/_mixins.scss';
 @import './base/_base.scss';
-@import 'theme/_colors.scss';
+@import './base/_theme.scss';
+
 
 /*----------THEME---------*/
 @import './theme/_buttons.scss';
-@import './base/_mixins.scss';
+
 
 /*----------LAYOUT---------*/
 @import './layout/_header.scss';
 @import './modules/_banner.scss';
 @import './modules/_about_us.scss';
+@import './modules/_focus.scss';
 @import '_footer.scss';

@@ -1,0 +1,25 @@
+.sectionTitle {
+  font-size: 50px;
+  color: $gray;
+  text-align: center;
+  margin-bottom: 40px;
+  @include media(768px) {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+  @include media(480px) {
+    font-size: 26px;
+  }
+}
+.sub-text {
+  font-size: 14px;
+  color: $gray2;
+  text-align: center;
+  @include media (768px) {
+    line-height: 20px;
+  }
+}
+.wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}

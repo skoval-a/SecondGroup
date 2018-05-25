@@ -1,0 +1,81 @@
+.focus {
+  padding: 80px 15px;
+  background-color: $lightGray;
+  .wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  &__head {
+    margin-bottom: 80px;
+  }
+  &__sub-text {
+    font-size: 14px;
+    color: $gray2;
+    text-align: center;
+  }
+  .sectionTitle {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  &__boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  .box {
+    width: 265px;
+    max-width: 265px;
+    flex: 1;
+    min-width: 170px;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 15px;
+    &.red {
+      border-bottom: 3px solid $red;
+    }
+    &.green{
+      border-bottom: 3px solid $green;
+    }
+    &.purpure{
+      border-bottom: 3px solid $purpure;
+    }
+    &.yellow{
+      border-bottom: 3px solid $yellow;
+    }
+    &__img {
+      margin-bottom: 30px;
+    }
+    &__title {
+      margin-bottom: 30px;
+      font-size: 20px;
+      color: $gray;
+      font-weight: 500;
+    }
+    &__text {
+      color: $gray2;
+      font-size: 15px;
+      line-height: 25px;
+    }
+  }
+  @include media(1024px) {
+    &__boxes {
+      margin: 0;
+    }
+    .box {
+      margin-bottom: 25px;
+      flex: auto;
+    }
+  }
+  @include media(768px) {
+    padding: 30px 15px;
+  }
+}

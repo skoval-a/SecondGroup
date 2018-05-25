@@ -1,54 +1,82 @@
-.aboutUs {
-  padding: 70px 15px;
-  .container {
-    max-width: 1140px;
-    margin: auto;
+.aboutus {
+  padding: 150px 15px;
+  .wrapper {
     display: flex;
     align-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
   }
-  &__image {
-    width: 555px;
-    height: 700px;
+  &__photo {
+    max-width: 555px;
+    max-height: 700px;
+    width: 100%;
+    height: 100%;
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
-  &__info {
+  &__body {
     position: relative;
-    width: 650px;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
-    background: #fff;
-    padding: 90px;
+    height: 490px;
+    max-width: 650px;
+    padding: 30px 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: -70px;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
     &:after {
+      width: 100%;
+      height: 3px;
       position: absolute;
-      left: 5px;
-      top: 5px;
-      font-weight: bold;
-      content: '01';
-      font-size: 270px;
-      color: #f6f6f6;
+      left: 0;
+      bottom: 0;
+      content: "";
+      background-image: linear-gradient(to left, #3a9a7c 0%,#3a9a7c 25%, #fc5f45 25%, #fc5f45 50%, #956dca 50%,#956dca 75%, #feb960 75% ,#feb960 100%);
     }
   }
-  &__wrap-info {
-    position: relative;
-    z-index: 1;
-  }
-  &__title {
-    color: $gray3;
-    font-family: 'Baskerville';
-    font-size: 50px;
-    margin-bottom: 45px;
+  .sectionTitle {
+    margin-bottom: 55px;
   }
   &__text {
     font-size: 15px;
-    color: $colorSectionText;
-    line-height: 30px;
+    color: $gray2;
+    line-height: 25px;
     margin-bottom: 40px;
     &:last-child {
-      margin-bottom: 0px;
+      margin-bottom: 0;
+    }
+  }
+  &__wrap-title {
+    width: 100%;
+  }
+  @include media(1024px) {
+    &__body {
+      height: auto;
+      padding: 30px 50px;
+    }
+    .sectionTitle {
+      margin-bottom: 30px;
+    }
+  }
+  @include media(1024px) {
+    padding: 30px 15px;
+    .wrapper {
+      flex-direction: column;
+      max-width: 400px;
+    }
+    &__body {
+      width: auto;
+      margin-left: 0;
+      margin-top: 25px;
+    }
+    &__text {
+      font-size: 14px;
     }
   }
 }
