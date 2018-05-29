@@ -15,6 +15,10 @@
     "tests"
   ],
   "dependencies": {
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "wow": "wowjs#^1.1.2"
+  },
+  "devDependencies": {
+    "wow": "wowjs#^1.1.2"
   }
 }

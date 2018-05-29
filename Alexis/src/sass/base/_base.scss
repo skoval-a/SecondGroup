@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Poppins-Regular';
-  src: url('../../fonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'),  url('../../fonts/Poppins-Regular.otf')  format('opentype'),
-	     url('../../fonts/Poppins-Regular.woff') format('woff'), url('../../fonts/Poppins-Regular.ttf')  format('truetype'), url('../../fonts/Poppins-Regular.svg#Poppins-Regular') format('svg');
+  src: url('/src/fonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'),  url('/src/fonts/Poppins-Regular.otf')  format('opentype'),
+	     url('/src/fonts/Poppins-Regular.woff') format('woff'), url('/src/fonts/Poppins-Regular.ttf')  format('truetype'), url('/src/fonts/Poppins-Regular.svg#Poppins-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -33,6 +33,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	overflow-x: hidden;
   line-height: 1;
   font-family: 'Poppins-Regular';
 }

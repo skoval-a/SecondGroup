@@ -27,7 +27,7 @@ const reload = browserSync.reload;
 /*Task for webserver*/
 const config = {
   server: {
-      baseDir: "./src"
+      baseDir: "./"
   },
   tunnel: false,
   host: 'localhost',

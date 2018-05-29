@@ -1,5 +1,8 @@
 .video {
   position: relative;
+  padding: 15px;
+  text-align: center;
+  background-color: $gray3;
   height: 500px;
   overflow: hidden;
   display: flex;
@@ -8,38 +11,32 @@
   &:after {
     position: absolute;
     left: 0;
-    content: '';
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(31,35,70,0.8);
-    z-index: 1;
+    background:rgba(18, 38, 76, 0.7);
+    content: '';
   }
-  &__item-video {
+  &__title {
+    color: #fff;
+    margin-bottom: 50px;
+    font-size: 30px;
+    position: relative;
+    z-index: 1;
+    padding: 30px;
+    background: rgba(115, 140, 187, 0.7);
+    border-bottom: 3px solid red;
+    border-radius: 3px;
+  }
+  &__video-item {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
     height: 100%;
+    width: 100%;
     object-fit: cover;
   }
-  &__content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-  }
-  &__title {
-    color: $white;
-    font-size: 30px;
-    margin-bottom: 40px;
-  }
-  &__icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 40px;
-  }
-  &__text {
-    color: $white;
-    font-size: 15px;
+  @include media(768px) {
+    height: 300px;
   }
 }
