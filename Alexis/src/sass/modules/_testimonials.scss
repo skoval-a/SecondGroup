@@ -1,0 +1,47 @@
+.testimonials {
+  background: #3f4049;
+  padding: 70px 15px;
+  .itemSlide {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  &__img {
+    width: 384px;
+    height: 389px;
+    background: #eaeaea;
+    img {
+      display: block;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    flex: 1;
+    background: #fff;
+    padding: 40px 70px;
+  }
+  &__text {
+    font-size: 15px;
+    color: #616161;
+    line-height: 25px;
+  }
+  .owl-dots {
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    .owl-dot {
+      outline: none;
+      margin: 0 5px;
+      width: 25px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      height: 25px;
+      &.active {
+        border-color: orange;
+        background: orange;
+      }
+    }
+  }
+}

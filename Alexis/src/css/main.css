@@ -586,3 +586,42 @@ a {
     font-size: 16px;
     line-height: 27px;
     color: #fff; }
+
+.testimonials {
+  background: #3f4049;
+  padding: 70px 15px; }
+  .testimonials .itemSlide {
+    position: relative;
+    display: flex;
+    align-items: center; }
+  .testimonials__img {
+    width: 384px;
+    height: 389px;
+    background: #eaeaea; }
+    .testimonials__img img {
+      display: block;
+      object-fit: cover; }
+  .testimonials__content {
+    flex: 1;
+    background: #fff;
+    padding: 40px 70px; }
+  .testimonials__text {
+    font-size: 15px;
+    color: #616161;
+    line-height: 25px; }
+  .testimonials .owl-dots {
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    display: flex;
+    align-items: center; }
+    .testimonials .owl-dots .owl-dot {
+      outline: none;
+      margin: 0 5px;
+      width: 25px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      height: 25px; }
+      .testimonials .owl-dots .owl-dot.active {
+        border-color: orange;
+        background: orange; }

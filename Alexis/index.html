@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/bower_components/animate.css/animate.min.css">
+  <link rel="stylesheet" href="/bower_components/owl.carousel/dist/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="src/css/main.css">
   <title>Document</title>
 </head>
@@ -197,7 +198,7 @@
         </div>
         <div class="box">
           <div class="box__img">
-              <img src="https://images.pexels.com/photos/226172/pexels-photo-226172.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb" alt="">
+            <img src="https://images.pexels.com/photos/226172/pexels-photo-226172.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb" alt="">
           </div>
           <div class="content green wow right slideInRight" data-wow-offset="350">
             <div class="content__row">
@@ -320,9 +321,51 @@
       </div>
     </div>
   </section>
+  <section class="testimonials">
+    <div class="wrapper">
+      <div class="owl-carousel">
+        <div>
+          <div class="itemSlide">
+            <div class="testimonials__img"></div>
+            <div class="testimonials__content">
+              <div class="testimonials__text">
+                Deployment ownership non-disclosure agreement vesting period crowdfunding 
+      success influencer partnership equity series A financing network effects user 
+      experience crowdsource. Burn rate stock bootstrapping direct mailing release client traction creative facebook monetization crowdfunding rockstar.
+      A financing network effects user 
+      experience crowdsource. Burn rate stock bootstrapping direct mailing release client traction creative facebook monetization crowdfunding rockstar.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="itemSlide">
+            <div class="testimonials__img"></div>
+            <div class="testimonials__content">
+              <div class="testimonials__text">
+                Deployment ownership non-disclosure agreement vesting period crowdfunding 
+      success influencer partnership equity series A financing network effects user 
+      experience crowdsource. Burn rate stock bootstrapping direct mailing release client traction creative facebook monetization crowdfunding rockstar.
+      A financing network effects user 
+      experience crowdsource. Burn rate stock bootstrapping direct mailing release client traction creative facebook monetization crowdfunding rockstar.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/bower_components/wow/dist/wow.min.js"></script>
+<script src="/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
 <script>
   new WOW().init();
+  $(document).ready(function() {
+    $(".owl-carousel").owlCarousel({
+      items: 1,
+      dots: true,
+    });
+  });
  </script>
 </body>
 </html>
