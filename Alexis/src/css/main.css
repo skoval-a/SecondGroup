@@ -511,3 +511,78 @@ a {
   @media only screen and (max-width: 480px) {
     .portfolio .box {
       width: calc(100% - 10px); } }
+
+.workExp__wrap {
+  width: 40px;
+  margin: 0 auto;
+  position: relative; }
+  .workExp__wrap:after {
+    position: absolute;
+    top: 0px;
+    width: 1px;
+    content: '';
+    background: #1b1b1b;
+    height: 100%;
+    left: calc(50% + 2px);
+    transform: translateX(-50%); }
+
+.workExp__itemCircle {
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 160px;
+  border-radius: 50%;
+  border: 2px solid #1b1b1b; }
+  .workExp__itemCircle .circle {
+    width: 16px;
+    height: 16px;
+    background: #fb6470;
+    border-radius: 50%;
+    border: 2px solid #1b1b1b; }
+
+.workExp__message {
+  position: absolute;
+  width: 400px;
+  background: #353541;
+  border-radius: 8px;
+  padding: 20px; }
+  .workExp__message.right {
+    right: -550px;
+    top: 0; }
+    .workExp__message.right:after {
+      position: absolute;
+      content: '';
+      width: 37px;
+      height: 32px;
+      left: -37px;
+      top: 24px;
+      background: url("/src/img/arrowMessage.jpg") no-repeat center center; }
+  .workExp__message.left {
+    left: -550px;
+    bottom: 0; }
+    .workExp__message.left:after {
+      position: absolute;
+      width: 37px;
+      height: 32px;
+      right: -37px;
+      bottom: 24px;
+      content: '';
+      background: url("/src/img/leftArrowMessage.jpg") no-repeat center center; }
+  .workExp__message .title {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 20px; }
+  .workExp__message .subText {
+    color: #fc5f45;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-decoration: uppercase; }
+  .workExp__message .text {
+    font-size: 16px;
+    line-height: 27px;
+    color: #fff; }

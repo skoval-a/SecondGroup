@@ -1,0 +1,89 @@
+@mixin circleStyle {
+  border-radius: 50%;
+  border: 2px solid #1b1b1b;
+}
+
+.workExp {
+  &__wrap {
+    width: 40px;
+    margin: 0 auto;
+    position: relative;
+    &:after {
+      position: absolute;
+      top: 0px;
+      width: 1px;
+      content: '';
+      background: #1b1b1b;
+      height: 100%;
+      left: calc(50% + 2px);
+      transform: translateX(-50%);
+    }
+  }
+  &__itemCircle {
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 160px;
+    @include circleStyle;
+    .circle {
+      width: 16px;
+      height: 16px;
+      background: #fb6470;
+      @include circleStyle;
+    }
+  }
+  &__message {
+    position: absolute;
+    width: 400px;
+    background: #353541;
+    border-radius: 8px;
+    padding: 20px;
+    &.right {
+      right: -550px;
+      top: 0;
+      &:after {
+        position: absolute;
+        content: '';
+        width: 37px;
+        height: 32px;
+        left: -37px;
+        top: 24px;
+        background: url('/src/img/arrowMessage.jpg') no-repeat center center;
+      }
+    }
+    &.left {
+      left: -550px;
+      bottom: 0;
+      &:after {
+        position: absolute;
+        width: 37px;
+        height: 32px;
+        right: -37px;
+        bottom: 24px;
+        content: '';
+        background: url('/src/img/leftArrowMessage.jpg') no-repeat center center;
+      }
+    }
+    .title {
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .subText {
+      color: $red;
+      margin-bottom: 20px;
+      font-size: 18px;
+      text-decoration: uppercase;
+    }
+    .text {
+      font-size: 16px;
+      line-height: 27px;
+      color: #fff;
+    }
+  }
+}
