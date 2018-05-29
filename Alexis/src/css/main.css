@@ -474,3 +474,40 @@ a {
         .work .box .content {
           padding: 30px;
           min-height: initial; } }
+
+.portfolio {
+  padding: 80px 15px; }
+  .portfolio .wrapper {
+    max-width: 1140px;
+    margin: 0 auto; }
+  .portfolio .sectionTitle {
+    margin-bottom: 40px;
+    text-align: center; }
+  .portfolio__sub-text {
+    font-size: 14px;
+    color: #616161;
+    text-align: center; }
+  .portfolio__boxes {
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+    flex-flow: row wrap; }
+  .portfolio .box {
+    width: calc(33.3% - 10px);
+    max-width: 360px;
+    max-height: 300px;
+    margin: 0 5px 10px 5px; }
+    .portfolio .box__img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; }
+  @media only screen and (max-width: 768px) {
+    .portfolio {
+      padding: 30px 15px; } }
+  @media only screen and (max-width: 767px) {
+    .portfolio .box {
+      width: calc(50% - 10px);
+      max-width: 320px; } }
+  @media only screen and (max-width: 480px) {
+    .portfolio .box {
+      width: calc(100% - 10px); } }
