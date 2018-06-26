@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+    .head {
+      display: flex;
+    }
+    .head a {
+      padding: 10px 15px;
+      border-radius: 3px;
+      display: block;
+      font-size: 16px;
+      color: black;
+      text-decoration: underline;
+      outline: none;
+      border: 1px solid #eaeaea;
+    }
+    .tabs {
+      padding: 15px;
+    }
+    .tab {
+      display: none;
+    }
+    .tab.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+      <div class="head">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+      </div>
+      <div class="tabs">
+        <div class="tab show">
+          <h1>1</h1>
+        </div>
+        <div class="tab">
+          <h1>2</h1>
+        </div>
+        <div class="tab">
+          <h1>3</h1>
+        </div>
+      </div>
+    </div>
+<script src="js.js">
+</script>
+</body>
+</html>
