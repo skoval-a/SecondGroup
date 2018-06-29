@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slider</title>
+  <style>
+    .container {
+      max-width: 700px;
+      margin: auto;
+      position: relative;
+    }
+    .wrapSlider {
+      min-height: 560px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .navigation button {
+      outline: none;
+      margin-right: 10px;
+      border: 1px solid #eaeaea;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 12px 25px;
+      border-radius: 3px;
+    }
+    .dots {
+      position: absolute;
+      right: 20px;
+      bottom:  20px;
+      display: flex;
+      align-items: center;
+    }
+    .dots .itemDot {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      outline: none;
+      border-radius: 50%;
+      border: 1px solid #eaeaea;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="wrapSlider">
+      <div class="itemSlide">
+        <p class="status">1/1</p>
+        <img src="https://cs8.pikabu.ru/post_img/big/2016/11/29/10/1480439569193232018.jpg" alt="">
+        <p class="text">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент </p>
+      </div>
+      <div class="itemSlide">
+        <p class="status">1/2</p>
+        <img src="https://ru.fishki.net/picsw/072011/15/bonus/peyzazhi/tn.jpg" alt="">
+        <p class="text">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент </p>
+      </div>
+      <div class="itemSlide">
+        <p class="status">1/3</p>
+        <img src="https://cs8.pikabu.ru/post_img/big/2016/11/29/10/1480439569193232018.jpg" alt="">
+        <p class="text">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент </p>
+      </div>
+    </div>
+    <div class="navigation">
+      <button class='prev'>Prev</button>
+      <button class="pause">Pause</button>
+      <button class="start">Start</button>
+      <button class="next">Next</button>
+    </div>
+    <div class="dots">
+      <button class="itemDot"></button>
+      <button class="itemDot"></button>
+      <button class="itemDot"></button>
+    </div>
+  </div>
+  <script>
+    var indexSlide = 1;
+    var timer;
+
+    showSlide(indexSlide);
+    // startSlide();
+
+    var pauseBtn = document.querySelector('.pause');
+    var startBtn = document.querySelector('.start');
+    var dotsBtn = document.querySelectorAll('.itemDot');
+
+    document.querySelector('.next').addEventListener('click', () => showNext(1));
+    document.querySelector('.prev').addEventListener('click', () => showNext(-1));
+    
+    for(let i = 0; i < dotsBtn.length; i++) {
+      dotsBtn[i].addEventListener('click', () => {
+        showSlide(indexSlide = i + 1);
+      });
+    }
+
+    function startSlide () {
+      timer = setInterval(() => {
+        showNext(1);
+      }, 2000);
+    }
+
+    pauseBtn.addEventListener('click', () => {
+      clearInterval(timer);
+    });
+
+    startBtn.addEventListener('click', () => {
+      startSlide();
+    });
+
+    function showNext(n) {
+      showSlide(indexSlide += n);
+    }
+
+    function showSlide(n) {
+      var i;
+      var slides = document.querySelectorAll('.itemSlide');
+      if(n  > slides.length) {
+        indexSlide = 1;
+      }
+      if(n  < 1) {
+        indexSlide = slides.length;
+      }
+      console.log(n);
+      for(i = 0; i < slides.length; i ++) {
+        slides[i].style.display = 'none';
+      }
+      slides[indexSlide - 1].style.display = 'block';
+    }
+   
+  </script>
+</body>
+</html>
