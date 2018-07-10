@@ -41,7 +41,39 @@ body {
     font-weight: bold;
     font-size: 20px;
   }
-
 }
 
+.userList {
+  &__head {
+    display: flex;
+    background: #eaeaea;
+    p {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0;
+    }
+    > div {
+      padding: 8px;
+      flex: 1;
+    }
+    .avatar {
+      width: 100px;
+    }
+  }
+}
 
+.itemUser {
+  display: flex;
+  align-items: center;
+  > div {
+    flex: 1;
+    padding: 8px;
+  }
+  &__image {
+    width: 100px;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

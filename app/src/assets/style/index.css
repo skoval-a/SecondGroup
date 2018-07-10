@@ -33,3 +33,28 @@ body {
   .usersHeader__title {
     font-weight: bold;
     font-size: 20px; }
+
+.userList__head {
+  display: flex;
+  background: #eaeaea; }
+  .userList__head p {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0; }
+  .userList__head > div {
+    padding: 8px;
+    flex: 1; }
+  .userList__head .avatar {
+    width: 100px; }
+
+.itemUser {
+  display: flex;
+  align-items: center; }
+  .itemUser > div {
+    flex: 1;
+    padding: 8px; }
+  .itemUser__image {
+    width: 100px; }
+    .itemUser__image img {
+      width: 60px;
+      height: 60px; }
