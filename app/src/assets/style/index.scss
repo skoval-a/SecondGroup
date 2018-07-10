@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  padding: 30px;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-content {
+  display: flex;
+  flex: 1;
+  padding: 15px;
+}
+
+.sidebar {
+  margin-right: 15px;
+  width: 25%;
+  padding: 15px;
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+}
+
+.wrap-users {
+  width: 75%;
+  border: 1px solid #eaeaea;
+}
+
+.usersHeader {
+
+  padding: 10px 15px;
+  border-bottom: 1px solid #eaeaea;
+  &__title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+}
+
+
