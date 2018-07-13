@@ -34,14 +34,9 @@ export default class Home extends Component {
     this.setState(config);
   }
 
-  getValue = (value) => {
-    
-  }
-
   render() {
     const buttonsList = [
       {
-        value: 1,
         name: 'Name',
         icon: 'fa-users',
         onClick: () => console.log(),
@@ -49,7 +44,7 @@ export default class Home extends Component {
       {
         name: 'Name',
         icon: 'fa-ban',
-        onClick: (value) => this.getValue(value),
+        onClick: () => console.log('123'),
       },
     ];
     const {
@@ -71,7 +66,7 @@ export default class Home extends Component {
               <button
                 key={id}
                 type='button'
-                onClick={() => onClick(item.value)}
+                onClick={item.onClick}
                 className='btn btn-primary'
               >
                 <i className={`fa ${item.icon}`}></i>
