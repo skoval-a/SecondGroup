@@ -6,7 +6,14 @@ export default (props) => {
       <input
         className='form-control'
         placeholder='Search users'
+        onChange={props.searchValue}
       />
+      {
+        props.isError &&
+        <div className='alert alert-danger'>
+           Not Users
+        </div>
+      }
     </div>
   );
 }

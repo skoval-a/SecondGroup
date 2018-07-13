@@ -24,8 +24,9 @@ export default class Home extends Component {
     fetch(data)
     .then(response => response.json())
     .then(data => {
+      this.initialData = data;
       this.setState({
-        data: data.splice(0,20),
+        data: this.initialData,
       });
     })
   }
@@ -34,12 +35,28 @@ export default class Home extends Component {
     this.setState(config);
   }
 
+  search = (e) => {
+    console.log(e.target);
+    const value = e.target.value.toLowerCase();
+    const fillter = this.initialData.filter(user => {
+      return user.name.toLowerCase().includes(value);
+    });
+    this.updateApp({
+      data: fillter,
+    });
+    
+  }
+
+  test = () => {
+    console.log('12313');
+  }
+
   render() {
     const buttonsList = [
       {
         name: 'Name',
         icon: 'fa-users',
-        onClick: () => console.log(),
+        onClick: this.test,
       },
       {
         name: 'Name',
@@ -50,6 +67,7 @@ export default class Home extends Component {
     const {
       data,
     } = this.state;
+    console.log('data', this.state.data);
     return (
       <div className='home'>
        <header className={`App-header ${this.state.isHeaderClass ? 'red' : ''}`}>
@@ -58,7 +76,7 @@ export default class Home extends Component {
         </header>
         <div className="home__header">
           <SearInput
-            
+            searchValue={this.search}
           />
           <div className='rowSorting'>
             {
