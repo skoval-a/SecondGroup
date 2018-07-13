@@ -7,7 +7,7 @@ import ActiveUser from '../../components/ActiveUser';
 import data from '../../data.txt';
 import logo from '../../logo.svg';
 import '../../App.css';
-
+import ItemUser from '../../components/ItemUser';
 
 
 export default class Home extends Component {
@@ -34,11 +34,27 @@ export default class Home extends Component {
     this.setState(config);
   }
 
+  getValue = (value) => {
+    
+  }
+
   render() {
+    const buttonsList = [
+      {
+        value: 1,
+        name: 'Name',
+        icon: 'fa-users',
+        onClick: () => console.log(),
+      },
+      {
+        name: 'Name',
+        icon: 'fa-ban',
+        onClick: (value) => this.getValue(value),
+      },
+    ];
     const {
       data,
     } = this.state;
-    console.log('usersList', this.state.activeUser);
     return (
       <div className='home'>
        <header className={`App-header ${this.state.isHeaderClass ? 'red' : ''}`}>
@@ -49,6 +65,23 @@ export default class Home extends Component {
           <SearInput
             
           />
+          <div className='rowSorting'>
+            {
+              buttonsList.map((item, id) =>
+              <button
+                key={id}
+                type='button'
+                onClick={() => onClick(item.value)}
+                className='btn btn-primary'
+              >
+                <i className={`fa ${item.icon}`}></i>
+                <p className='btnName'>
+                  {item.name}
+                </p>
+              </button>
+            )
+            }
+          </div>
         </div>
         <div className="home__content">
           <div className="home__sidebar">

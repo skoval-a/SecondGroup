@@ -7,9 +7,15 @@ export default props => {
       <div className='activeUser__image'>
         <img src={user.image} />
       </div>
-      <p className='activeUser__text'>{user.name}</p>
-      <p className='activeUser__text'>{user.age}</p>
-      <p className='activeUser__text'>{user.phone}</p>
+      <p className='activeUser__text'>
+        {user.name}
+      </p>
+      <p className='activeUser__text'>
+        {user.age}
+      </p>
+      <p className='activeUser__text'>
+        {user.phone}
+      </p>
     </div>
   );
 }
