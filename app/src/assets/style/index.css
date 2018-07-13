@@ -1,60 +1,146 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif; }
-
-.wrapper {
-  padding: 30px; }
-
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column; }
 
-.home-content {
+.home {
   display: flex;
-  flex: 1;
-  padding: 15px; }
+  flex-direction: column;
+  flex: 1; }
+  .home__header {
+    padding: 15px;
+    min-height: 50px; }
+    .home__header .input-group {
+      display: flex;
+      flex-direction: column; }
+    .home__header .form-control {
+      width: 100%;
+      margin-bottom: 10px;
+      outline: none; }
+      .home__header .form-control:focus, .home__header .form-control:active {
+        border: 1px solid #ced4da;
+        box-shadow: none; }
+      .home__header .form-control.is-invalid {
+        border-color: #dc3545 !important; }
+  .home__content {
+    display: flex;
+    flex: 1;
+    padding: 15px; }
+  .home__sidebar {
+    margin-right: 15px;
+    width: 25%;
+    paddding: 15px;
+    border: 1px solid #eaeaea;
+    border-radius: 3px; }
+  .home__wrapUsers {
+    width: 75%;
+    border: 1px solid #eaeaea; }
+    .home__wrapUsers .usersHeader {
+      padding: 10px 15px;
+      border-bottom: 1px solid #eaeaea; }
+      .home__wrapUsers .usersHeader__title {
+        font-weight: bold;
+        font-size: 20px; }
+    .home__wrapUsers .itemUser {
+      display: flex;
+      align-items: center; }
+      .home__wrapUsers .itemUser > div {
+        padding: 8px;
+        flex: 1; }
+      .home__wrapUsers .itemUser__image {
+        flex: inherit !important;
+        width: 100px; }
+        .home__wrapUsers .itemUser__image img {
+          width: 60px;
+          height: 60px; }
+    .home__wrapUsers .usersList__head {
+      display: flex;
+      background: #eaeaea; }
+      .home__wrapUsers .usersList__head p {
+        font-weight: bold;
+        font-size: 14px;
+        margin: 0; }
+      .home__wrapUsers .usersList__head > div {
+        padding: 8px;
+        flex: 1; }
+      .home__wrapUsers .usersList__head .avatar {
+        width: 100px;
+        flex: inherit !important; }
 
-.sidebar {
-  margin-right: 15px;
-  width: 25%;
-  padding: 15px;
-  border: 1px solid #eaeaea;
-  border-radius: 3px; }
-
-.wrap-users {
-  width: 75%;
-  border: 1px solid #eaeaea; }
-
-.usersHeader {
-  padding: 10px 15px;
-  border-bottom: 1px solid #eaeaea; }
-  .usersHeader__title {
-    font-weight: bold;
-    font-size: 20px; }
-
-.userList__head {
+.rowSorting {
   display: flex;
-  background: #eaeaea; }
-  .userList__head p {
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0; }
-  .userList__head > div {
+  align-items: center;
+  justify-content: flex-end; }
+  .rowSorting .btn {
+    display: flex;
+    align-items: center;
+    margin-left: 15px; }
+    .rowSorting .btn:first-child {
+      margin-left: 0px; }
+    .rowSorting .btn .btnName {
+      margin: 0 0 0 5px; }
+    .rowSorting .btn:last-child {
+      margin-left: 15px; }
+
+.activeUser {
+  padding: 10px;
+  text-align: center; }
+  .activeUser__image {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eaeaea; }
+    .activeUser__image img {
+      max-width: 100%;
+      width: 150px;
+      height: 150px; }
+  .activeUser__text {
+    margin: 0;
     padding: 8px;
-    flex: 1; }
-  .userList__head .avatar {
-    width: 100px; }
+    border-bottom: 1px solid #eaeaea; }
 
-.itemUser {
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.leftCol {
   display: flex;
   align-items: center; }
-  .itemUser > div {
-    flex: 1;
-    padding: 8px; }
-  .itemUser__image {
-    width: 100px; }
-    .itemUser__image img {
-      width: 60px;
-      height: 60px; }
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.nav {
+  display: flex; }
+
+.nav .item {
+  margin-left: 10px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  font-size: 16px; }
+
+.App-title {
+  font-size: 1.5em; }
+
+.App-intro {
+  font-size: large; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.dropdown__head {
+  padding: 15px;
+  min-height: 42px;
+  border-radius: 5px;
+  border: 1px solid #eaeaea; }
+
+.dropdown__content {
+  padding: 10px; }

@@ -40,32 +40,32 @@ export default class Home extends Component {
     } = this.state;
     console.log('usersList', this.state.activeUser);
     return (
-      <div>
+      <div className='home'>
        <header className={`App-header ${this.state.isHeaderClass ? 'red' : ''}`}>
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <div className='wrapper'>
-          <div className="sub-header">
-            <SearInput
-              
-            />
-          </div>
-          <div className='home-content'>
+        <div className="home__header">
+          <SearInput
+            
+          />
+        </div>
+        <div className="home__content">
+          <div className="home__sidebar">
             <div className='sidebar'>
               <ActiveUser
                 user={this.state.activeUser}
               />
             </div>
-            <div className='wrap-users'>
-              <div className="usersHeader">
-                <h2 className='usersHeader__title'>Users</h2>
-              </div>
-              <UsersList
-                data={data}
-                updateApp={this.updateApp.bind(this)}
-              />
+          </div>
+          <div className="home__wrapUsers">
+            <div className="usersHeader">
+              <h2 className='usersHeader__title'>Users</h2>
             </div>
+            <UsersList
+              data={data}
+              updateApp={this.updateApp.bind(this)}
+            />
           </div>
         </div>
       </div>

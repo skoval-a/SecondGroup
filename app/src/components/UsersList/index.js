@@ -3,8 +3,8 @@ import ItemUser from '../ItemUser';
 
 export default props => {
   return (
-    <div className='userList'>
-      <div className='userList__head'>
+    <div className='usersList'>
+      <div className="usersList__head">
         <div className='avatar'>
           <p>Avatar:</p>
         </div>
