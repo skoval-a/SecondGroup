@@ -26,6 +26,39 @@ export default props => {
           {...item}
         />)
       }
+      <nav>
+        <ul className='pagination'>
+         <li className='page-item'>
+          <a
+            className="page-link"
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              props.handlePagitaion(-1)
+            }}>
+              Prev
+            </a>
+          </li>
+          <li className='page-item'>
+            <a
+              className="page-link"
+              href="#">
+              {props.currentPage + 1}
+            </a>
+          </li>
+          <li className='page-item'>
+            <a
+              className="page-link"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                props.handlePagitaion(1)
+              }}>
+                Next
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }

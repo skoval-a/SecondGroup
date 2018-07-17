@@ -16,6 +16,8 @@ export default class Home extends Component {
     this.state = {
       data: null,
       activeUser: null,
+      currentPage: 0,
+      listPages: null,
     };
   }
 
@@ -27,6 +29,7 @@ export default class Home extends Component {
       this.initialData = data;
       this.setState({
         data: this.initialData,
+        activeUser: data[0],
       });
     })
   }
@@ -43,15 +46,32 @@ export default class Home extends Component {
     });
     this.updateApp({
       data: fillter,
+      currentPage: 0,
     });
-    
   }
 
-  test = () => {
-    console.log('12313');
+  splitUsers = () => {
+    const {
+      data,
+      currentPage,
+    } = this.state;
+    return data && data.slice(currentPage * 15, currentPage * 15 + 15);
+  }
+  
+  handlePagitaion = (number) => {
+    const { currentPage, data } = this.state;
+    const listPages = Math.ceil(data.length / 15);
+    if(number + currentPage >= 0 && number + currentPage < listPages) {
+      this.setState(prev => (console.log(prev),{
+        listPages,
+        currentPage: this.state.currentPage + number,
+      }))
+    }
   }
 
   render() {
+    console.log('listPages',this.state.listPages);
+    console.log('currentPage',this.state.currentPage);
     const buttonsList = [
       {
         name: 'Name',
@@ -66,8 +86,9 @@ export default class Home extends Component {
     ];
     const {
       data,
+      listPages,
+      currentPage,
     } = this.state;
-    console.log('data', this.state.data);
     return (
       <div className='home'>
        <header className={`App-header ${this.state.isHeaderClass ? 'red' : ''}`}>
@@ -76,6 +97,7 @@ export default class Home extends Component {
         </header>
         <div className="home__header">
           <SearInput
+            isError={data && data.length === 0}
             searchValue={this.search}
           />
           <div className='rowSorting'>
@@ -109,7 +131,10 @@ export default class Home extends Component {
               <h2 className='usersHeader__title'>Users</h2>
             </div>
             <UsersList
-              data={data}
+              handlePagitaion={this.handlePagitaion}
+              currentPage={currentPage}
+              listPages={listPages}
+              data={this.splitUsers()}
               updateApp={this.updateApp.bind(this)}
             />
           </div>
