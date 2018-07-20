@@ -18,17 +18,17 @@ export default class Home extends Component {
       activeUser: null,
       currentPage: 0,
       listPages: null,
+      isErrorUser: false,
     };
   }
-
 
   componentWillMount() {
     fetch(data)
     .then(response => response.json())
     .then(data => {
-      this.initialData = data;
       this.setState({
-        data: this.initialData,
+        defaultUsers: [...data],
+        data,
         activeUser: data[0],
       });
     })
@@ -36,17 +36,36 @@ export default class Home extends Component {
 
   updateApp(config) {
     this.setState(config);
+    if(config.activeUser.id === this.state.activeUser.id) {
+      this.setState({
+        isErrorUser: true,
+      })
+    } else {
+      this.setState({
+        isErrorUser: false,
+      });
+    }
   }
 
   search = (e) => {
-    console.log(e.target);
     const value = e.target.value.toLowerCase();
-    const fillter = this.initialData.filter(user => {
+    const fillter = this.state.defaultUsers.filter(user => {
       return user.name.toLowerCase().includes(value);
     });
     this.updateApp({
       data: fillter,
       currentPage: 0,
+    });
+  }
+  
+  sort = (type) => {
+    const { data } = this.state;
+    const dataUsers = data;
+    const sorted = dataUsers.sort((a, b) => {
+      return a[type] > b[type] ? 1 : -1;
+    });
+    this.setState({
+      data: sorted,
     });
   }
 
@@ -64,30 +83,41 @@ export default class Home extends Component {
     if(number + currentPage >= 0 && number + currentPage < listPages) {
       this.setState(prev => (console.log(prev),{
         listPages,
-        currentPage: this.state.currentPage + number,
+        currentPage: prev.currentPage + number,
       }))
     }
   }
 
+  reset = () => {
+    this.updateApp({
+      data: this.state.defaultUsers,
+      activeUser: this.state.defaultUsers[0],
+    });
+  }
+
   render() {
-    console.log('listPages',this.state.listPages);
-    console.log('currentPage',this.state.currentPage);
     const buttonsList = [
       {
         name: 'Name',
         icon: 'fa-users',
-        onClick: this.test,
+        onClick: () => this.sort('name'),
       },
       {
-        name: 'Name',
+        name: 'Age',
         icon: 'fa-ban',
-        onClick: () => console.log('123'),
+        onClick: () => this.sort('age'),
+      },
+      {
+        name: 'Reset',
+        icon: 'fa-ban',
+        onClick: this.reset,
       },
     ];
     const {
       data,
       listPages,
       currentPage,
+      isErrorUser,
     } = this.state;
     return (
       <div className='home'>
@@ -113,8 +143,7 @@ export default class Home extends Component {
                 <p className='btnName'>
                   {item.name}
                 </p>
-              </button>
-            )
+              </button>)
             }
           </div>
         </div>
@@ -122,6 +151,7 @@ export default class Home extends Component {
           <div className="home__sidebar">
             <div className='sidebar'>
               <ActiveUser
+                isErrorUser={isErrorUser}
                 user={this.state.activeUser}
               />
             </div>
