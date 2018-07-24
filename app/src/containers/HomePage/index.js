@@ -1,14 +1,30 @@
 import React, { Component } from 'react';
 
-import SearInput from '../../components/SearchInput';
-import UsersList from '../../components/UsersList';
-import ActiveUser from '../../components/ActiveUser';
+import  {
+  SearchInput,
+  UsersList,
+  ActiveUser,
+  Dropdown,
+} from '../../components';
 
 import data from '../../data.txt';
 import logo from '../../logo.svg';
 import '../../App.css';
 import ItemUser from '../../components/ItemUser';
 
+import { IMAGES, COLORS } from '../../assets';
+
+const listDropdowns = [
+  {
+    name: 'Button 1',
+  },
+  {
+    name: 'Button 2',
+  },
+  {
+    name: 'Button 3',
+  },
+];
 
 export default class Home extends Component {
   constructor(props) {
@@ -19,6 +35,7 @@ export default class Home extends Component {
       currentPage: 0,
       listPages: null,
       isErrorUser: false,
+      listDropdowns,
     };
   }
 
@@ -95,7 +112,16 @@ export default class Home extends Component {
     });
   }
 
+  isContentDropdown = (item, index) => {
+    const listDropdowns = [...this.state.listDropdowns];
+    listDropdowns[index].isOpen = !listDropdowns[index].isOpen;
+    this.setState({
+      listDropdowns,
+    });
+  }
+
   render() {
+    console.log('listDropdowns', this.state.listDropdowns);
     const buttonsList = [
       {
         name: 'Name',
@@ -121,12 +147,23 @@ export default class Home extends Component {
     } = this.state;
     return (
       <div className='home'>
+        <div>
+          {
+            listDropdowns.map((item, index) =>
+            <Dropdown
+              key={index}
+              title={item.name}
+              isOpenDropdown={item.isOpen}
+              isContentDropdown={() => this.isContentDropdown(item, index)}
+            />)
+          }
+        </div>
        <header className={`App-header ${this.state.isHeaderClass ? 'red' : ''}`}>
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div className="home__header">
-          <SearInput
+          <SearchInput
             isError={data && data.length === 0}
             searchValue={this.search}
           />
