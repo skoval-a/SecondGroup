@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { BrowserRouter} from 'react-router-dom';
 import  {
   SearchInput,
   UsersList,
@@ -147,7 +147,7 @@ export default class Home extends Component {
     } = this.state;
     return (
       <div className='home'>
-        <div>
+        {/* <div>
           {
             listDropdowns.map((item, index) =>
             <Dropdown
@@ -157,11 +157,7 @@ export default class Home extends Component {
               isContentDropdown={() => this.isContentDropdown(item, index)}
             />)
           }
-        </div>
-       <header className={`App-header ${this.state.isHeaderClass ? 'red' : ''}`}>
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+        </div> */}
         <div className="home__header">
           <SearchInput
             isError={data && data.length === 0}
