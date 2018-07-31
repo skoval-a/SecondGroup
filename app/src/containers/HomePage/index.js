@@ -121,6 +121,11 @@ export default class Home extends Component {
   }
 
   render() {
+    const addUser = {
+      type: 'ADD_USER',
+      
+    };
+
     console.log('listDropdowns', this.state.listDropdowns);
     const buttonsList = [
       {
