@@ -1,9 +1,6 @@
 import React from 'react';
 
 export default props => {
-  const {
-    name1,
-  } = props || {};
   return (
     <div
       className='itemUser'

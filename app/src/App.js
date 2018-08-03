@@ -4,7 +4,6 @@ import Home from './containers/HomePage';
 import About from './containers/About';
 import { HeaderTop } from './components';
 
-import Header from './components/Header';
 class App extends Component {
 
   render() {

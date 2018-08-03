@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import { BrowserRouter} from 'react-router-dom';
+
 import  {
   SearchInput,
   UsersList,
   ActiveUser,
-  Dropdown,
+  // Dropdown,
 } from '../../components';
 
 import data from '../../data.txt';
-import logo from '../../logo.svg';
 import '../../App.css';
-import ItemUser from '../../components/ItemUser';
 
-import { IMAGES, COLORS } from '../../assets';
 
 const listDropdowns = [
   {
@@ -53,14 +50,17 @@ export default class Home extends Component {
 
   updateApp(config) {
     this.setState(config);
-    if(config.activeUser.id === this.state.activeUser.id) {
-      this.setState({
-        isErrorUser: true,
-      })
-    } else {
-      this.setState({
-        isErrorUser: false,
-      });
+    console.log('config.activeUser',config.activeUser);
+    if(config.activeUser) {
+      if(config.activeUser.id === this.state.activeUser.id) {
+        this.setState({
+          isErrorUser: true,
+        })
+      } else {
+        this.setState({
+          isErrorUser: false,
+        });
+      }
     }
   }
 

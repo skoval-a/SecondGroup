@@ -1,18 +1,95 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { ItemUser } from '../../components';
 class About extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      test: '1',
+      name: '',
     };
   }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    let contact = {
+      name: this.state.name,
+    };
+    this.setState({
+      name: '',
+    })
+    
+  }
+
+  handleChange = (e) =>{
+    this.setState({
+      name: e.target.value,
+    });
+  }
+
+  listView = (contact, index) => {
+   return (
+    <div className='row' key={index}>
+      <div className='col-xs-10'>
+        <p className="contact-name">
+          {contact.name}
+        </p>
+      </div>
+      <div className='col-xs-2'>
+        <button
+          className='btn btn-danger'
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+   ); 
+  }
+
   render() {
-    console.log('props', this.props);
+    const {
+      name,
+    } = this.state;
+    console.log('this.props',this.props);
     return (
-      <h1>
-        This is about page
-      </h1>
+     <div className='about'>
+      <div className='about__header'>
+        <h1>
+          About Page
+        </h1>
+      </div>
+      <div className='about-content'>
+        <div className='wrapForm'>
+          <div className='wrapForm__header'>
+            <h3>
+              Add contact form
+            </h3>
+          </div>
+          <form className='form' onSubmit={this.handleSubmit}>
+            <div className='form-group'>
+              <input
+                type='text'
+                value={name}
+                placeholder='Add contact'
+                className='form-control'
+                onChange={this.handleChange}
+              />
+            </div>
+            <button
+              type='submit'
+              className='btn btn-success'
+            >
+            <i className='fa fa-user-plus'></i>
+              Add Contact
+            </button>
+          </form>
+          {
+            this.props.contacts.length > 0 && this.props.contacts.map((contact, i) =>
+             this.listView(contact, i)) ||
+             <div className="alert alert-danger">Not Contacts</div>
+          }
+        </div>
+      </div>
+     </div>
     );
   }
 }
@@ -22,5 +99,11 @@ const mapStateToProps = (state) => {
     contacts: state.contacts,
   };
 }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createContact: contact => console.log(contact),
+    deleteContact: index => console.log(index)
+  };
+}
 
-export default connect(mapStateToProps)(About)
+export default connect(mapStateToProps,mapDispatchToProps)(About)

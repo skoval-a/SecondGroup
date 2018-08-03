@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from '../../logo.svg';
 import '../../App.css';
-import ItemUser from '../ItemUser';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+
+import { NavLink } from 'react-router-dom';
 
 export default (props) => {
   return (
