@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ItemUser } from '../../components';
+import * as contactAction from '../../actions/contactAction';
+
 class About extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +18,7 @@ class About extends Component {
     this.setState({
       name: '',
     })
-    
+    this.props.createContact(contact);
   }
 
   handleChange = (e) =>{
@@ -101,7 +102,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    createContact: contact => console.log(contact),
+    createContact: contact => dispatch(contactAction.createContact(contact)),
     deleteContact: index => console.log(index)
   };
 }
