@@ -37,6 +37,7 @@ class About extends Component {
       </div>
       <div className='col-xs-2'>
         <button
+          onClick={() => this.props.deleteContact(index)}
           className='btn btn-danger'
         >
           Remove
@@ -103,7 +104,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createContact: contact => dispatch(contactAction.createContact(contact)),
-    deleteContact: index => console.log(index)
+    deleteContact: index => dispatch(contactAction.deleteContact(index))
   };
 }
 

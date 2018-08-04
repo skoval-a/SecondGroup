@@ -7,8 +7,9 @@ export const createContact = (contact) => {
   }
 }
 
-export const deleteContact = () => {
+export const deleteContact = (id) => {
   return {
     type: actionTypes.DELETE_CONTACT,
+    id: id,
   }
 }
